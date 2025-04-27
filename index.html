@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="CodeV: Empowering LLMs for Verilog Generation through Multi-Level Summarization">
+  <meta name="description" content="CodeV">
   <meta name="keywords" content="Language Language Model, Program synthesis">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CodeV: Empowering LLMs for Verilog Generation through Multi-Level Summarization</title>
+  <title>CodeV</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -179,10 +179,11 @@
               generation LLMs. Instead of generating descriptions first and then getting the
               corresponding code from advanced LLMs, we prompt the LLM with Verilog code
               and let the LLM generate the corresponding natural language description by multi-
-              level summarization. Experimental results show that CodeV relatively surpasses
+              level summarization.
+              <!-- Experimental results show that CodeV relatively surpasses
               the previous open-source SOTA by 14.4% (BetterV in VerilogEval) and 11.3%
               (RTLCoder in RTLLM) respectively, and also relatively outperforms previous
-              commercial SOTA GPT-4 by 22.1% in VerilogEval.
+              commercial SOTA GPT-4 by 22.1% in VerilogEval. -->
             </p>
           </div>
         </div>
@@ -230,10 +231,12 @@
           <div class="content">
             <h2 class="title is-3"> Main Results </h2>
             <p>
-              We compares the main results of our CodeV with baseline methods on the VerilogEval and RTLLM benchmarks. We test CodeLlama, DeepSeek-Coder, and CodeQwen on RTLLM, while other baseline results are sourced from RTLCoder or BetterV paper. For a fair comparison, we also evaluate our models trained on comparable-size datasets against RTLCoder.
+              We compares the main results of our CodeV with baseline methods on the VerilogEval and RTLLM benchmarks. We test CodeLlama, DeepSeek-Coder, CodeQwen and Qwen2.5-Coder on RTLLM, while other baseline results are sourced from RTLCoder or BetterV paper. For a fair comparison, we also evaluate our models trained on comparable-size datasets against RTLCoder.
             </p>
             <p>
-              Comparison of our CodeV models against various baseline models. Some data are missing due to the models being close-sourced and the data not being reported previously. The best results are highlighted in bold. In VerilogEval, CodeV outperforms all previous methods across all metrics, relatively surpassing previous open-source SOTA BetterV by 14.4% and GPT-4 by 22.1% on average. In RTLLM, CodeV relatively surpasses previous open-source SOTA RTLCoder by 11.3%.</p>
+              Comparison of our CodeV models against various baseline models. <strong>CodeV-Verilog</strong> performed well in the VerilogEval and RTLLM benchmarks, surpassing the RTLCoder and BetterV methods in the VerilogEval benchmark test,
+              particularly in the most challenging pass@1 metric where <strong>Code-Verilog-QC</strong> achieves 80.1% in VerilogEval-machine, and <strong>CodeV-Verilog-QC</strong> achieves 59.2% in VerilogEval-human, significantly outperforming both GPT-4 and BetterV-CodeQwen. In the RTLLM v1.1 benchmark, <strong>CodeV-Verilog-CL</strong> nearly matches GPT-4's functional check success rate, failing in just 1 more case out of 29 circuits compared to GPT-4, and significantly outperforms all other models. Also, <strong>CodeV-Verilog</strong> significantly outperforms its GPT-3.5-turbo-0125 summarization model. These results demonstrate that, contributed by a high-quality instruction tuning dataset, <strong>CodeV-Verilog</strong> exhibits significant superiority in Verilog generation tasks.
+            </p>
             <img src="./static/images/result1.png">
             </p>
           </div>
